@@ -19,10 +19,7 @@ class CommentChildWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isRTL = Directionality.of(context) == TextDirection.rtl;
     final EdgeInsets padding = EdgeInsets.only(
-        left: isRTL ? 0 : avatarRoot!.width + 8.0,
-        bottom: 8,
-        top: 8,
-        right: isRTL ? avatarRoot!.width + 8.0 : 0);
+        left: isRTL ? 0 : avatarRoot!.width + 8.0, bottom: 8, top: 8, right: isRTL ? avatarRoot!.width + 8.0 : 0);
 
     return CustomPaint(
       painter: _Painter(
@@ -36,15 +33,18 @@ class CommentChildWidget extends StatelessWidget {
       ),
       child: Container(
         padding: padding,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            avatar!,
-            const SizedBox(
-              width: 8,
-            ),
-            Expanded(child: content!),
-          ],
+        child: Container(
+          padding: EdgeInsets.all(12.0),
+          decoration:
+              BoxDecoration(border: Border.all(color: Color(0xFFECEEF2)), borderRadius: BorderRadius.circular(16.0)),
+          child: Row(
+            spacing: 8.0,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              avatar!,
+              Expanded(child: content!),
+            ],
+          ),
         ),
       ),
     );

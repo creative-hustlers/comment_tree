@@ -11,19 +11,13 @@ class RootCommentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: RootPainter(
-        avatar.preferredSize,
-        context.watch<TreeThemeData>().lineColor,
-        context.watch<TreeThemeData>().lineWidth,
-          Directionality.of(context)
-      ),
+      painter: RootPainter(avatar.preferredSize, context.watch<TreeThemeData>().lineColor,
+          context.watch<TreeThemeData>().lineWidth, Directionality.of(context)),
       child: Row(
+        spacing: 8.0,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           avatar,
-          const SizedBox(
-            width: 8,
-          ),
           Expanded(
             child: content,
           )
@@ -49,11 +43,9 @@ class RootPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    if(textDecoration == TextDirection.rtl)
-    canvas.translate(size.width, 0);
+    if (textDecoration == TextDirection.rtl) canvas.translate(size.width, 0);
     double dx = avatar!.width / 2;
-    if(textDecoration == TextDirection.rtl)
-      dx *= -1;
+    if (textDecoration == TextDirection.rtl) dx *= -1;
     canvas.drawLine(
       Offset(dx, avatar!.height),
       Offset(dx, size.height),
