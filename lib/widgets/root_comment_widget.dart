@@ -14,10 +14,10 @@ class RootCommentWidget extends StatelessWidget {
       painter: RootPainter(avatar.preferredSize, context.watch<TreeThemeData>().lineColor,
           context.watch<TreeThemeData>().lineWidth, Directionality.of(context)),
       child: Row(
-        spacing: 8.0,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           avatar,
+          SizedBox(width: 8,),
           Expanded(
             child: content,
           )
