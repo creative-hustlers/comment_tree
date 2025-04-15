@@ -38,10 +38,11 @@ class CommentChildWidget extends StatelessWidget {
           decoration:
               BoxDecoration(border: Border.all(color: Color(0xFFECEEF2)), borderRadius: BorderRadius.circular(16.0)),
           child: Row(
-            spacing: 8.0,
+           
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               avatar!,
+              SizedBox(width: 8,),
               Expanded(child: content!),
             ],
           ),
