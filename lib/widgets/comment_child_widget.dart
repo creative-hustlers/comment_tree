@@ -34,9 +34,6 @@ class CommentChildWidget extends StatelessWidget {
       child: Container(
         padding: padding,
         child: Container(
-          padding: EdgeInsets.all(12.0),
-          decoration:
-              BoxDecoration(border: Border.all(color: Color(0xFFECEEF2)), borderRadius: BorderRadius.circular(16.0)),
           child: Row(
            
             crossAxisAlignment: CrossAxisAlignment.start,
